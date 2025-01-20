@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: sasta_postman
+    ports: 
+    - 4000:3000
+    env_file:
+      - .env
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
