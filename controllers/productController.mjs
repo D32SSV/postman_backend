@@ -53,7 +53,8 @@ export const deleteProduct = async (req, res) => {
   if (apiKey) {
     return res.status(500).json({
       success: false,
-      message: "Not authorised for this operation, Missing API_KEY",
+      message:
+        "Not authorised for this operation, Sccessfully Tested Auth Middleware through API_KEY",
     });
   }
   const { id } = req.params;
