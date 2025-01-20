@@ -4,7 +4,7 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.mjs";
 import productRoutes from "./routes/productRoutes.mjs";
 import orderRoutes from "./routes/orderRoutes.mjs";
-
+import cors from "cors";
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -12,6 +12,7 @@ connectDB();
 
 const app = express();
 
+app.use(cors());
 app.use(json());
 
 app.use("/api/auth", authRoutes);
@@ -21,4 +22,3 @@ app.use("/api/orders", orderRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
